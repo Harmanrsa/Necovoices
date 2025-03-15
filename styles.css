@@ -1,0 +1,182 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #141414;
+    color: white;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #000;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-wrapper {
+    position: relative;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+    z-index: 2;
+    color: transparent; /* Yozuv rangini shaffof qilish */
+    background: linear-gradient(90deg, #09f1b8, #00a2ff, #ff00d2, #fed90f);
+    background-size: 400% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+   
+    animation: wave-gradient 10s linear infinite;
+}
+
+@keyframes wave-gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Aura effekti uchun stil */
+.logo::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 70%);
+    z-index: -1;
+    filter: blur(20px);
+    animation: aura-pulse 5s infinite alternate;
+}
+
+@keyframes aura-pulse {
+    0% {
+        opacity: 0.8;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0.4;
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+}
+
+/* Hero Section */
+.hero {
+    height: 60vh;
+    background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi669WYI6VSt5Uf552q-2cf6semE22W37xtpz-d7TT0Mkx2Ap2ZjNx88bRwbs-PKMA9yCcBfdL8pkFQ4G801bczNbJirytzQreOegBEOa-lALltg7_gjb7cERzI35oNDfa5-rUO_HIXafU/s1600/hyouka-10-satoshi-houtarou-mayaka-watching_a_movie-laptop-analysis-critics.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #e50914;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background-color: #ff3348;
+}
+
+/* Movie Section */
+.movie-section {
+    padding: 2rem;
+}
+
+.movie-section h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.movie-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    aspect-ratio: 9/16; /* Suratlarni vertikal qilish uchun nisbat */
+}
+
+.movie-card img {
+    width: 100%;
+    height: 100%; /* Rasm balandligini to'liq qoplash */
+    object-fit: cover; /* Rasmning nisbatini saqlab qolish */
+    transition: transform 0.3s ease;
+}
+
+.movie-card:hover img {
+    transform: scale(1.1);
+}
+
+.movie-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 1rem;
+    color: white
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #000;
+    color: #757575;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+    .hero p {
+        font-size: 0.9rem;
+    }
+}

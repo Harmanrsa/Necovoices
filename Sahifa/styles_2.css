@@ -1,0 +1,111 @@
+/* Google Fonts-dan Poppins shriftini ulash */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* Asosiy stil */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333; /* Asosiy matn rangi */
+    background-color: #f9f9f9; /* Orqa fon rangi */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+/* Video pleer uchun stil */
+.video-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.video-player {
+    width: 100%;
+    height: 100%;
+}
+
+/* Video sarlavhasi */
+.video-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600; /* Qalin shrift */
+    font-size: 24px; /* Sarlavha uchun o'lcham */
+    color: #000; /* Qora rang */
+    margin-bottom: 16px;
+}
+
+/* Tavsiya qilingan videolar qismi */
+.recommended-videos {
+    margin-top: 24px;
+}
+
+.section-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500; /* O'rta qalinlik */
+    font-size: 20px; /* Kichikroq sarlavha */
+    color: #000; /* Qora rang */
+    margin-bottom: 16px;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.video-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-5px); /* Effekt */
+}
+
+.thumbnail {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.video-card-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400; /* Oddiy shrift */
+    font-size: 16px; /* Oddiy matn uchun o'lcham */
+    color: #555; /* Kulrang rang */
+    padding: 8px;
+    margin: 0;
+}
+
+/* Mobil versiya uchun stil */
+@media (max-width: 768px) {
+    .video-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .video-title {
+        font-size: 20px;
+    }
+
+    .section-title {
+        font-size: 18px;
+    }
+
+    .video-card-title {
+        font-size: 14px;
+    }
+}
